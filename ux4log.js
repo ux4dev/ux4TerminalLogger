@@ -202,4 +202,7 @@ const ux4TerminalLog = {
 
 if (process.argv.indexOf("-nocolor") >= 0) this.disableColor();
 
-module.exports = ux4TerminalLog;
+module.exports = {
+    Log: ux4TerminalLog,
+    Font: font
+};
