@@ -50,7 +50,7 @@ const Font = {
     cls: "\033c"
 }
 
-const ux4TerminalLog = {
+const Log = {
 
     /**
     * Set to true to enable debug logging
@@ -203,6 +203,6 @@ const ux4TerminalLog = {
 if (process.argv.indexOf("-nocolor") >= 0) this.disableColor();
 
 module.exports = {
-    Log: ux4TerminalLog,
-    Font: font
+    Log: Log,
+    Font: Font
 };
