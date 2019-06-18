@@ -1,0 +1,23 @@
+{
+  "name": "ux4terminallogger",
+  "version": "1.0.0",
+  "description": "A simple console logger which uses control codes for colours",
+  "main": "ux4log.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ux4dev/ux4TerminalLogger.git"
+  },
+  "keywords": [
+    "terminal",
+    "log"
+  ],
+  "author": "Chris Exon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ux4dev/ux4TerminalLogger/issues"
+  },
+  "homepage": "https://github.com/ux4dev/ux4TerminalLogger#readme"
+}
