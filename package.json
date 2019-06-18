@@ -3,6 +3,7 @@
   "version": "1.0.3",
   "description": "A simple console logger which uses control codes for colours",
   "main": "ux4log.js",
+  "types":"ux4terminallogger.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
