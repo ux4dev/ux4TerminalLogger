@@ -30,12 +30,12 @@ declare const ux4terminallogger: {
     Font: Font;
     Log: {
         applyStyle(color: Font): any;
-        cls: any;
+        cls(): any;
         debug(text: string, color: Font): any;
-        disableColor: any;
+        disableColor(): any;
         fail(text: string): any;
         info(text: string): any;
-        lf: any;
+        lf(): any;
         majorError(text: string): any;
         showDebug: boolean;
         success(text: string): any;
