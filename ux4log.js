@@ -50,6 +50,8 @@ const Font = {
     cls: "\033c"
 }
 
+var noColor = false;
+
 const Log = {
 
     /**
