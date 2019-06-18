@@ -1,6 +1,6 @@
 {
   "name": "ux4terminallogger",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A simple console logger which uses control codes for colours",
   "main": "ux4log.js",
   "types":"ux4terminallogger.d.ts",
