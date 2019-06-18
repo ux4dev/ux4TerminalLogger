@@ -202,7 +202,7 @@ const Log = {
 };
 
 
-if (process.argv.indexOf("-nocolor") >= 0) this.disableColor();
+if (process.argv.indexOf("-nocolor") >= 0) Log.disableColor();
 
 module.exports = {
     Log: Log,
