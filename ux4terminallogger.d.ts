@@ -29,6 +29,10 @@ interface Font {
 declare const ux4terminallogger: {
     Font: Font;
     Log: {
+        streamToFile(filename: string): void;
+        endStream(color: Font): void;
+        writeToFile(text: string): void;
+        applyStyle(color: Font): any;
         applyStyle(color: Font): any;
         cls(): any;
         debug(text: string, color: Font): any;

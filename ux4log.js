@@ -51,8 +51,36 @@ const Font = {
 }
 
 var noColor = false;
+var writeToFile = false;
+var logFile;
+const fs = require("fs");
 
 const Log = {
+    /**
+    * Stream any logging to a file
+    *
+    * @param {string} Log filename
+    */
+    streamToFile: function (filename) {
+        writeToFile = true;
+        logFile = fs.createWriteStream(filename);
+    },
+
+    /**
+    * Close the stream to the log file
+    */
+    endStream: function () {
+        logFile.end();
+    },
+
+    /**
+    * Write directly to the log file skipping the console
+    *
+    * @param {string} The text to log
+    */
+    writeToFile: function (text) {
+        logFile.write(text);
+    },
 
     /**
     * Set to true to enable debug logging
@@ -83,6 +111,7 @@ const Log = {
      */
     info: function (text = "", color = "") {
         console.log(color + Font.moveback1char + text + Font.reset);
+        if (writeToFile) logFile.write(text.toString() + "\n");
         return this;
     },
 
@@ -132,6 +161,7 @@ const Log = {
         title += x;
 
         console.log(color + title + Font.reset);
+        if (writeToFile) logFile.write(title.toString() + "\n");
         return this;
     },
 
@@ -187,6 +217,7 @@ const Log = {
      */
     lf: function () {
         console.log("");
+        if (writeToFile) logFile.write("\n");
         return this;
     },
 
