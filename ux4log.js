@@ -61,18 +61,31 @@ const Log = {
     *
     * @param {string} Log filename
     */
-    streamToFile: function (filename) {
-        writeToFile = true;
-        logFile = fs.createWriteStream(filename);
+    streamToFile: async function (filename) {
+        return new Promise((resolve, reject) => {
+            writeToFile = true;
+            logFile = fs.createWriteStream(filename, { autoClose: true, emitClose: true });
+            logFile.on("open", () => {
+                resolve();
+            }).on("error", () => {
+                reject();
+            })
+        });
     },
 
     /**
     * Close the stream to the log file
     */
-    endStream: function () {
-        logFile.end();
-    },
+    endStream: async function () {
+        return new Promise((resolve, reject) => {
+            logFile.on("close", () => {
+                resolve();
+            });
 
+            logFile.end();
+        });
+    },
+    
     /**
     * Write directly to the log file skipping the console
     *
